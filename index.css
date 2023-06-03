@@ -9,7 +9,6 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  /* background: rgb(52, 68, 98); */
   padding: 10px;
   background-image: url(./image/background.jpg);
 }
@@ -169,7 +168,6 @@ ul li {
 
 #total-tasks {
   margin-bottom: 20px;
-  font-size: 18px;
   margin-left: 2px;
   color: black;
 }
