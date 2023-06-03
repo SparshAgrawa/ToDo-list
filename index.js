@@ -6,12 +6,10 @@ const taskList = document.getElementById("list");
 const addTaskInput = document.getElementById("add");
 const tasksCounter = document.getElementById("tasks-counter");
 const button = document.getElementById("btn");
-const completeall = document.getElementById("complete-all");
-const clearall = document.getElementById("clear-all");
 var comptask = 0;
 var completedtask = document.getElementById("count");
 
-// a function to add a task
+// a function to add a task to DOM
 function addTaskToDOM(task) {
   const li = document.createElement("li");
   li.innerHTML = `
@@ -25,7 +23,7 @@ function addTaskToDOM(task) {
 }
 
 //  a function to render the list
-function renderList() {
+function rendering() {
   taskList.innerHTML = "";
   for (let i = 0; i < tasks.length; i++) {
     addTaskToDOM(tasks[i]);
@@ -33,7 +31,8 @@ function renderList() {
   tasksCounter.innerHTML = tasks.length;
 }
 
-// Define a function to mark a task as complete
+
+// function to mark a task as complete
 function markCompleted(taskId) {
   const task = tasks.filter(function (task) {
     return task.id === taskId;
@@ -47,45 +46,40 @@ function markCompleted(taskId) {
       currentTask.done = true;
       comptask++;
     }
-    renderList();
+    rendering();
     completedtask.innerHTML = comptask;
   } else {
   }
 }
 
-// Define a function to delete a task
+// function to delete a task
 function deleteTask(taskId) {
   const newTasks = tasks.filter(function (task) {
     return task.id !== taskId;
   });
   tasks = newTasks;
-  renderList();
+  rendering();
   if (comptask > 0) {
     comptask--;
     completedtask.innerHTML = comptask;
   }
 }
 
-// Define a function to add a task to the tasks array
+// function to add a task to the tasks array
 function addTask(task) {
   if (task) {
     tasks.push(task);
-    renderList();
+    rendering();
     return;
-  } 
+  }
 }
 
-// Define a function to show a notification to the user
-function showNotification(text){
-  alert(text);
-}
-
-// Define a function to handle keypress and mousedown events on the input field
+// function to handle keypress on the input field
 function handleInputKeypress(e) {
-  if (e.key == "Enter" ) {
+  if (e.key == "Enter") {
     const text = addTaskInput.value;
     if (!text) {
-      showNotification("Task text cannot be empty");
+      alert("Task text cannot be empty");
       return;
     }
     const task = {
@@ -113,9 +107,8 @@ function handleClickListener(e) {
 
 function initializeApp() {
   document.addEventListener("click", handleClickListener);
-  button.addEventListener("mousedown", handleInputKeypress);
 }
 initializeApp();
 
-// listener to press enter 
-addTaskInput.addEventListener("keyup",handleInputKeypress)
+// listener to press enter
+addTaskInput.addEventListener("keyup", handleInputKeypress);
