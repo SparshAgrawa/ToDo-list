@@ -105,6 +105,25 @@ function handleClickListener(e) {
   }
 }
 
+// function to show completed tasks
+function showCompletedTasks() {
+    // remove "active" class from all links
+    allLink.classList.remove('active');
+    remLink.classList.remove('active');
+    comLink.classList.add('active');
+    // hide uncompleted tasks and show completed tasks
+    const tasks = document.querySelectorAll('#list li');
+    tasks.forEach(task => {
+        const checkbox = task.querySelector('.custom-checkbox');
+        if (checkbox.checked) {
+            task.style.display = 'flex';
+        } else {
+            task.style.display = 'none';
+        }
+    });
+}
+
+
 function initializeApp() {
   document.addEventListener("click", handleClickListener);
 }
