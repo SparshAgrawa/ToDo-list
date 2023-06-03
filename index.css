@@ -11,7 +11,7 @@
   min-height: 100vh;
   /* background: rgb(52, 68, 98); */
   padding: 10px;
-  background-image: url(background.jpg);
+  background-image: url(./image/background.jpg);
 }
 
 .todo-app {
