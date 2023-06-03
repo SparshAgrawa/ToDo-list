@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- link for external css -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- link for fontawose -->
+    <script
+      src="https://kit.fontawesome.com/3dce9717da.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Todo List</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-app">
+        <h2>Todo List</h2>
+        <div class="row">
+          <input
+            type="text"
+            class="add-task"
+            id="add"
+            placeholder="Add your todo"
+          />
+          <button id="btn">Add</button>
+        </div>
+        <ul id="list">
+          <!-- <li>
+                    <input type="checkbox" id="task1" data-id="12" class="custom-checkbox">
+                    <label for="task1">Buy groceries</label>
+                    <img src="bin.svg" class="delete" data-id="12" />
+            </li> -->
+        </ul>
+
+        <!-- value showing completed task and all -->
+        <div class="completed-task">
+          <p>Completed: <span id="count">0</span></p>
+        </div>
+        <div class="remaining-task">
+          <p>
+            <span id="total-tasks"
+              >Total Tasks: <span id="tasks-counter">0</span></span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- link for external js -->
+    <script src="index.js"></script>
+  </body>
+</html>
